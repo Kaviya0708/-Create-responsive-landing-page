@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colorful Landing Page</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+}
+
+/* Header */
+header{
+    background:linear-gradient(90deg,#ff512f,#dd2476);
+    color:white;
+    padding:15px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* Hero Section */
+.hero{
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    background:linear-gradient(-45deg,
+    #ff9a9e,
+    #fad0c4,
+    #a18cd1,
+    #84fab0);
+    background-size:400% 400%;
+    animation:gradient 8s ease infinite;
+}
+
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.hero h1{
+    font-size:60px;
+}
+
+.hero p{
+    font-size:22px;
+    margin:20px 0;
+}
+
+.btn{
+    background:white;
+    color:#333;
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+}
+
+/* Features */
+.features{
+    padding:70px 20px;
+    text-align:center;
+}
+
+.features h2{
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.card{
+    width:300px;
+    padding:25px;
+    border-radius:20px;
+    color:white;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card1{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+}
+
+.card2{
+    background:linear-gradient(135deg,#f093fb,#f5576c);
+}
+
+.card3{
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+/* About Section */
+.about{
+    padding:70px 20px;
+    text-align:center;
+    background:#fff;
+}
+
+.about h2{
+    margin-bottom:20px;
+    color:#333;
+}
+
+/* Footer */
+footer{
+    background:linear-gradient(90deg,#11998e,#38ef7d);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        right:10px;
+        top:70px;
+        background:#dd2476;
+        width:180px;
+        padding:20px;
+        border-radius:10px;
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    nav ul li{
+        margin:10px 0;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🌈 ColorWeb</div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <nav>
+        <ul id="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Build Your Dream Website</h1>
+    <p>Creative • Responsive • Modern Design</p>
+    <a href="#" class="btn">Get Started</a>
+</section>
+
+<section class="features">
+
+    <h2>✨ Our Features</h2>
+
+    <div class="cards">
+
+        <div class="card card1">
+            <h3>⚡ Fast Performance</h3>
+            <p>Optimized for speed and efficiency.</p>
+        </div>
+
+        <div class="card card2">
+            <h3>📱 Responsive Design</h3>
+            <p>Looks amazing on all devices.</p>
+        </div>
+
+        <div class="card card3">
+            <h3>🔒 Secure Platform</h3>
+            <p>Built using modern security practices.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="about">
+    <h2>About Us</h2>
+    <p>
+        We create beautiful, colorful, and modern web experiences
+        that help businesses grow online.
+    </p>
+</section>
+
+<footer>
+    <h3>🌟 Thank You For Visiting 🌟</h3>
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
